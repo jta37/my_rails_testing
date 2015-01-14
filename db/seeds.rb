@@ -1,4 +1,7 @@
+# Seeding with FFaker also gives you the ability to
+# => test the scalability of your application. (e.g change 100->1000)
 
+# Creates 100 fake users
 (1..100).each do
   user_params = Hash.new
   user_params[:email] = Faker::Internet.email

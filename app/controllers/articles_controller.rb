@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_filter :find_user_article, only: [:destroy, :update, :edit]
   before_filter :logged_in? 
   def index
+    # Article.all pulls all of the articles from the database, stores in @articles
     @articles = Article.all
     @articles.each do |article|
       if article.content.length > 500
