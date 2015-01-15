@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
+
+  # This method has to be in a controller.  It only runs this method if
+  # => we are trying to go to a :destroy, :update, or :edit page.
   before_filter :find_user_article, only: [:destroy, :update, :edit]
+  # The before logged_in? => you have to be logged in to access/view
+  # => anything in this controller
   before_filter :logged_in? 
   def index
     # Article.all pulls all of the articles from the database, stores in @articles
@@ -12,7 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    @new_article = Article.new
   end
 
   def create
@@ -32,6 +37,8 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    # the before_filter references the private method def find_user_article
+    # => and our edit method inherits the @article instance and params 
   end
 
   def update
