@@ -2,3 +2,17 @@
 <p>Find me in app/views/users/show.html.erb</p>
 
 <%= current_user.email %>
+
+<ul>
+<% @user_articles.each do |article| %>
+
+	<li><%= link_to article.title.titleize , article_path(article.id) %></li>
+
+<% end %>
+</ul>
+
+<% #article.title %>
+
+<div>
+	<h3><%= link_to "Home", article_path %> </h3>
+</div>

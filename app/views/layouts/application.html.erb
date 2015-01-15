@@ -10,14 +10,9 @@
   <link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'>
 </head>
 <body >
-  <nav class="navbar navbar-default navbar-cust">
-    <a class="navbar-brand" href="/articles/new">PostIT</a>
-    <ul class="nav navbar-nav navbar-right">
-      <% if current_user %>
-        <li><%= link_to current_user.email, user_path(current_user.id) %></li>
-      <% end %>
-    </ul>
-  </nav>
+  
+  <%= render "layouts/navigation" %>
+
   <div class="container">
     <%= yield %>
   </div>

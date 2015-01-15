@@ -17,7 +17,11 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.create(article_params)
-    redirect_to article_path(@article.id)
+    if @article
+      redirect_to article_path(@article.id)
+    else
+      redirect_to new_article_path
+    end
   end
 
   def show
@@ -56,6 +60,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :author, :content)
+      params.require(:article).permit(:title, :content)
     end
 end

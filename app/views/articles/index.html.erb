@@ -12,7 +12,6 @@
   <div class="row">
     <div class="col-xs-offset-1 col-xs-10 article-preview">
       <div><h2><%= link_to article.title.titleize , article_path(article.id) %></h2></div>
-      <div>Written By: <%= article.author %></div>
       <div>
         <% if article.keywords %>
         <span class="article-keywords"><%= article.keywords %></span>
