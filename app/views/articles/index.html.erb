@@ -9,6 +9,6 @@
 
 <div class="articles-con">
 <% @articles.each do |current_article| %>
-  <%= render partial: "preview", locals: { article: current_article } %>
+  <%= render partial: "articles/preview", locals: { article: current_article } %>
 <% end %>
 </div>
